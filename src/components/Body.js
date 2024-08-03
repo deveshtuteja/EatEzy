@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import Footer from "./Footer";
 
 const Body = () => {
     //local state var->super powerful react var
@@ -35,7 +36,7 @@ const Body = () => {
     //Conditional Rendering 
     return listOfRes.length === 0 ? <Shimmer /> : (
         <div className="body">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
                 <div className="search my-4 mx-1 p-4">
                     <input type="text" className="border border-black" value={searchText} data-testid="searchBox" onChange={(e) => {
                         setSearchText(e.target.value);
@@ -65,6 +66,7 @@ const Body = () => {
                     <Link style={{ textDecoration: "none", color: "black" }} key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> <RestaurantCard resData={restaurant.info} /> </Link>
                 ))}
             </div>
+            {/* <Footer /> */}
         </div>
     );
 };
