@@ -4,7 +4,6 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import Footer from "./Footer";
 
 const Body = () => {
     //local state var->super powerful react var
@@ -19,7 +18,7 @@ const Body = () => {
     }, [])
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4738044&lng=77.01067610000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log(json);
 
@@ -66,7 +65,6 @@ const Body = () => {
                     <Link style={{ textDecoration: "none", color: "black" }} key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> <RestaurantCard resData={restaurant.info} /> </Link>
                 ))}
             </div>
-            {/* <Footer /> */}
         </div>
     );
 };
