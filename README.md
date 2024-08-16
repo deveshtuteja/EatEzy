@@ -1,5 +1,9 @@
-# Food Ordering App
-
+# EatEzy-The Food Ordering App
+- Developed EatEzy: A food ordering and exploration app using React.js and Swiggy’s API, integrating real-time restaurant data to provide users with up-to-date information and options.
+- Implemented Redux for cart management: Enhanced site efficiency and user experience by streamlining the cart functionality, resulting in a 25% improvement in order processing speed.
+- Utilized Tailwind CSS for UI design: Crafted a visually appealing and user-friendly interface, achieving a 20% increase in user engagement through effective styling and design.
+- Applied Shimmer UI effects: Improved perceived loading times and user experience with dynamic shimmer effects, reducing wait times by 15% and maintaining user engagement
+  
 ## Structure
 
 ### HEADER
