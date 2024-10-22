@@ -41,7 +41,7 @@ const Body = () => {
                         setSearchText(e.target.value);
                     }} />
                     <button className="m-4 px-4 py-1 bg-green-100 rounded-lg" onClick={() => {
-                        console.log(searchText);
+                        // console.log(searchText);
                         const filRes = listOfRes.filter((res) =>
                             res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         );

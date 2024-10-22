@@ -7,19 +7,19 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-    const [btnNameReact,setBtnNameReact] = useState("Login");
-    const onlineStatus=useOnlineStatus();
+    const [btnNameReact, setBtnNameReact] = useState("Login");
+    const onlineStatus = useOnlineStatus();
 
-    const {loggedInUser}=useContext(UserContext);
+    const { loggedInUser } = useContext(UserContext);
 
 
     //Selector(HOOK)->Subscribing to the store
 
-    const cartItems=useSelector((store)=>store.cart.items);
-    console.log(cartItems);
+    const cartItems = useSelector((store) => store.cart.items);
+    // console.log(cartItems);
 
     return (
-        <div className="flex justify-between bg-pink-100 shadow-lg"> 
+        <div className="flex justify-between bg-pink-100 shadow-lg">
             <div className="logo-container">
                 <img className="w-28" src={LOGO_URL} alt="logo" />
             </div>
@@ -31,8 +31,8 @@ const Header = () => {
                     <li className="px-4"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4"><Link to="/grocery">Grocery</Link></li>
                     <li className="px-4 font-bold text-xl"><Link to="/cart">Cart - ({cartItems.length} items)</Link></li>
-                    <button className="login" onClick={()=>{
-                        btnNameReact==="Login"?setBtnNameReact("Logout"):setBtnNameReact("Login");
+                    <button className="login" onClick={() => {
+                        btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
                     }}>{btnNameReact}</button>
                     <li className="font-bold px-4">{loggedInUser}</li>
                 </ul>
